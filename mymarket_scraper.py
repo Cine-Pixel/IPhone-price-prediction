@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import pandas as pd
+import os
 
 
 def scrape_detail_page(driver: webdriver.Chrome):
@@ -21,7 +22,8 @@ def scrape_detail_page(driver: webdriver.Chrome):
 
 
 def main(url, category, sub_category, brand, condition, page=1):
-    driver = webdriver.Chrome()
+    driver_path = os.getcwd() + '\\webdriver\\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=driver_path)
     _url = url.format(cat = category, subcat=sub_category, brand=brand, condition=condition, page=page)
     driver.get(_url)
 

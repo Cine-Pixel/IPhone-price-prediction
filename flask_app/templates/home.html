@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>IPhone price prediction</title>
+</head>
+
+<body>
+    <!-- As a link -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">IPhone</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>IPhone Price Prediction</h1>
+
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputModel" class="form-label">Model</label>
+                <select id="inputModel" class="form-select" name="model">
+                    <option value="3">IPhone 3</option>
+                    <option value="4">IPhone 4</option>
+                    <option value="5">IPhone 5</option>
+                    <option value="5s">IPhone 5s</option>
+                    <option value="6">IPhone 6</option>
+                    <option value="6s">IPhone 6s</option>
+                    <option value="7">IPhone 7</option>
+                    <option value="8">IPhone 8</option>
+                    <option value="8+">IPhone 8 Plus</option>
+                    <option value="x">IPhone x</option>
+                    <option value="xs">IPhone xs</option>
+                    <option value="xs max">IPhone xs Max</option>
+                    <option value="11">IPhone 11</option>
+                    <option value="12">IPhone 12</option>
+                    <option value="12 pro">IPhone 12 Pro</option>
+                    <option value="12 pro max">IPhone 12 Pro Max</option>
+                    <option value="13">IPhone 13</option>
+                    <option vaue="12 pro">IPhone 12 Pro</option>
+                    <option value="12 pro max">IPhone 12 Pro Max</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="inputBattery" class="form-label">Battery Capacity</label>
+                <input type="number" class="form-control" id="inputBattery" name="battery">
+            </div>
+            <div class="col-md-6">
+                <label for="inputMemory" class="form-label">Internal Memory</label>
+                <input type="number" class="form-control" id="inputMemory" name="internal_memory">
+            </div>
+            <div class="col-md-6">
+                <label for="inputRAM" class="form-label">RAM</label>
+                <input type="number" class="form-control" id="inputRAM" name="ram">
+            </div>
+
+            <!-- cameras -->
+            <div class="col-md-4">
+                <label for="inputCameras" class="form-label">Number of Cameras</label>
+                <input type="number" class="form-control" id="inputCameras" name="number_of_cameras">
+            </div>
+            <div class="col-md-4">
+                <label for="inputPrimaryCam" class="form-label">Primary Camera (MP)</label>
+                <input type="number" class="form-control" id="inputPrimaryCam" name="primary_camera">
+            </div>
+            <div class="col-md-4">
+                <label for="inputSelfieCam" class="form-label">Selfie Camera (MP)</label>
+                <input type="number" class="form-control" id="inputSelfieCam" name="selfie_camera">
+            </div>
+            <!-- cameras -->
+
+            <!-- Screen -->
+            <div class="col-md-6">
+                <label for="inputScreenSize" class="form-label">Screen Size (inch)</label>
+                <input type="number" step=0.1 class="form-control" id="inputScreenSize" name="screen_size">
+            </div>
+            <div class="col-md-6">
+                <label for="inputScreenSize" class="form-label">Screen Type</label>
+                <select id="inputScreenType" class="form-select" name="screen_type">
+                    <option value="amoled">AMOLED</option>
+                    <option value="dynamic amoled">Dynamic AMOLED</option>
+                    <option value="ips">IPS</option>
+                    <option value="ips lcd">IPS LCD</option>
+                    <option value="lcd">LCD</option>
+                    <option value="lcd tft">LCD TFT</option>
+                </select>
+            </div>
+            <!-- End Screen -->
+
+            <div class="col-md-4">
+                <label for="inputyear" class="form-label">Year</label>
+                <input type="number" class="form-control" id="inputYear" name="year">
+            </div>
+            <div class="col-md-4">
+                <label for="inputSlot" class="form-label">Card Slot</label>
+                <select id="inputSlot" class="form-select" name="card_slot">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="input5g" class="form-label">5G</label>
+                <select id="input5g" class="form-select" name="5g">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="input4g" class="form-label">4G</label>
+                <select id="input4g" class="form-select" name="4g">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="inputGps" class="form-label">GPS</label>
+                <select id="inputGps" class="form-select" name="gps">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="inputNfc" class="form-label">NFC</label>
+                <select id="inputNfc" class="form-select" name="nfc">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <button id="submit" type="submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+
+    <script>
+        const button = $("#submit").on("click", function (event) {
+            event.preventDefault();
+            data = {
+                model: $("#inputModel").val(),
+                battery: parseFloat($("#inputBattery").val()),
+                internal_memory: parseFloat($("#inputMemory").val()),
+                ram: parseFloat($("#inputRAM").val()),
+                num_of_cameras: parseFloat($("#inputCameras").val()),
+                primary_cam: parseFloat($("#inputPrimaryCam").val()),
+                selfie_cam: parseFloat($("#inputSelfieCam").val()),
+                screen_size: parseFloat($("#inputScreenSize").val()),
+                display_type: $("#inputScreenType").val(),
+                year: parseFloat($("#inputYear").val()),
+                card_slot: $("#inputSlot").val(),
+                '5g': $("#input5g").val(),
+                '4g': $("#input4g").val(),
+                gps: $("#inputGps").val(),
+                nfc: $("#inputNfc").val(),
+            };
+
+            $.ajax({
+                url: '/predict',
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                data: JSON.stringify(data),
+                success: function (response) {
+                    console.log(response);
+                },
+            })
+        });
+    </script>
+</body>
+
+</html>
